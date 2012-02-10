@@ -1,0 +1,26 @@
+class SessionsController < ApplicationController
+  skip_before_filter :ensure_authenticated
+
+  def new
+    redirect_to '/auth/g'
+  end
+
+  def create
+    if auth = request.env['omniauth.auth']
+      user = User.find_or_initialize_by_email(auth['info']['email'])
+      user.uid = auth['uid']
+      user.name = auth['info']['name']
+      user.save!
+
+      session[:user_id] = user.id
+      redirect_to session[:redirect] || root_url
+    else
+      render '/auth/failure'
+    end
+  end
+
+  def failure
+    render :inline => 'Snowman says no. <div id="snowman" style="text-align:center; font-size:4000%;">&#9731;</div>'
+  end
+end
+
