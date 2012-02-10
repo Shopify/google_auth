@@ -2,8 +2,8 @@
 
 ## What
 
-GoogleAuth is a convenience wrapper around `omniauth-google-apps` that
-makes a lot of assumptions, and requires less setup.
+GoogleAuth is a very, very trivial convenience wrapper around `omniauth-google-apps` that
+makes a lot of assumptions, and requires much less setup.
 
 ## How
 
