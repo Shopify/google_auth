@@ -7,8 +7,7 @@ makes a lot of assumptions, and requires less setup.
 
 ## How
 
-#### 1. Your user model must have the string fields `name`, `email`, and
-   `uid`.
+#### 1. Your user model must have the string fields `name`, `email`, and `uid`.
 
 #### 2. Add to your Gemfile:
 
