@@ -15,7 +15,7 @@ module GoogleAuth
   end
 
   def self.user_class
-    klass = Rails.application.config.google_auth.path
+    klass = Rails.application.config.google_auth.user_class
     return klass if klass
 
     begin
