@@ -14,6 +14,10 @@ module GoogleAuth
       'g'
   end
 
+  def self.default_redirect_path
+    Rails.application.config.google_auth.default_redirect_path || "/"
+  end
+
   def self.user_class
     klass = Rails.application.config.google_auth.user_class
     return klass if klass

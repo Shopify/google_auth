@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       user.save!
 
       session[:user_id] = user.id
-      redirect_to session[:redirect] || root_url
+      redirect_to session[:redirect] || GoogleAuth.default_redirect_path
     else
       render '/auth/failure'
     end
