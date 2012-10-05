@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     if auth = request.env['omniauth.auth']
-      user = User.find_or_initialize_by_email(auth['info']['email'])
+      user = GoogleAuth.user_class.find_or_initialize_by_email(auth['info']['email'])
       user.uid = auth['uid']
       user.name = auth['info']['name']
       user.save!
