@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :ensure_authenticated
+  protect_from_forgery except: [:new, :create, :failure]
 
   def new
     redirect_to '/auth/g'

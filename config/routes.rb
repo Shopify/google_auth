@@ -1,5 +1,5 @@
-GoogleAuth::Engine.routes.draw do
-  match '/login', :to => 'sessions#new', :as => :login
-  match '/auth/g/callback', :to => 'sessions#create'
-  match '/auth/failure', :to => 'sessions#failure'
+Rails.application.routes.draw do
+  get '/login', :to => 'sessions#new', :as => :login
+  post '/auth/g/callback', :to => 'sessions#create'
+  post '/auth/failure', :to => 'sessions#failure'
 end
