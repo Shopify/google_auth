@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :ensure_authenticated
-  protect_from_forgery except: [:new, :create, :failure]
+  protect_from_forgery except: [:new, :create, :failure, :destroy]
 
   def new
     redirect_to '/auth/g'
@@ -18,6 +18,11 @@ class SessionsController < ApplicationController
     else
       render '/auth/failure'
     end
+  end
+
+  def destroy
+    logout
+    redirect_to root_path
   end
 
   def failure
