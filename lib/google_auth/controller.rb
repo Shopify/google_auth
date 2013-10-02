@@ -19,5 +19,10 @@ module GoogleAuth
       end
     end
 
+    def logout
+      session[:user_id] = nil
+      @current_user = nil
+    end
+
   end
 end
