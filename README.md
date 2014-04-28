@@ -5,6 +5,10 @@
 GoogleAuth is a very, very trivial convenience wrapper around `omniauth-google-apps` that
 makes a lot of assumptions, and requires much less setup.
 
+## Version
+
+Version 0.1.0 is Rails 4.x compatible. For Rails 3.x projects use version 0.0.4
+
 ## How
 
 #### 1. Your user model must have the string fields `name`, `email`, and `uid`.
